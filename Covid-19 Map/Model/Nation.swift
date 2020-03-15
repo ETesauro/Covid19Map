@@ -15,3 +15,4 @@ struct Nation: Codable, Identifiable {
     var confirmedDeath: String
     var image: String
 }
+ 
