@@ -68,6 +68,7 @@
 		2FDF3F17240D584C0060E2E2 = {
 			isa = PBXGroup;
 			children = (
+				2F800335243A5808004F1AD6 /* Images */,
 				2FDF3F22240D584C0060E2E2 /* Covid-19 Map */,
 				2FDF3F21240D584C0060E2E2 /* Products */,
 				EC71A4C831CABFFA62B12364 /* Pods */,
@@ -86,7 +87,6 @@
 		2FDF3F22240D584C0060E2E2 /* Covid-19 Map */ = {
 			isa = PBXGroup;
 			children = (
-				2F800335243A5808004F1AD6 /* Images */,
 				2FDF3F3D240D5C6C0060E2E2 /* View */,
 				2FDF3F3A240D58650060E2E2 /* Model */,
 				2FDF3F23240D584D0060E2E2 /* AppDelegate.swift */,
