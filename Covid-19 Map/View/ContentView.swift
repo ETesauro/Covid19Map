@@ -16,6 +16,9 @@ struct ContentView: View {
     //Stringa che mostra l'orario dell'ultimo aggiornamento
     @State var lastUpdate: String = ""
     
+    //Stringa che mostra il numero TOTALE di contagi nel MONDO
+    @State var totalCount: Int = 0
+    
     //Serve per evitare che l'app ricarichi sempre la lista ogni volta che si torna nella pagina principale
     @State var loaded: Bool = false
     
@@ -34,7 +37,11 @@ struct ContentView: View {
                 VStack(alignment: .leading){
                     
                     Text("Last update: \(self.lastUpdate)")
-                    .font(.footnote)
+                        .font(.footnote)
+                        .padding(.leading)
+                    
+                    Text("Total number of infections: \(self.totalCount)")
+                        .font(.footnote)
                         .padding(.leading)
                     
                     SearchBar(txtSearched: self.$textSearched)
@@ -55,29 +62,28 @@ struct ContentView: View {
                                 }
                             }.padding(.init(top: 5, leading: 0, bottom: 5, trailing: 0))
                         }.navigationBarTitle("Countries")
-                        .navigationBarItems(leading:
-                            Image(systemName: "arrow.clockwise.circle")
-                                .font(.title)
-                                .foregroundColor(.blue)
-                                .onTapGesture {
-                                    self.isLoading = true
-                                    self.loadData()
-                            },
-                                            trailing:
-                            Button(action: {
-                                //Apri alert
-                                print("ciao")
-                                self.showingAlert.toggle()
-                            }) {
-                                Image(systemName: "info.circle")
+                            .navigationBarItems(leading:
+                                Image(systemName: "arrow.clockwise.circle")
                                     .font(.title)
-                            }
-                            .alert(isPresented: self.$showingAlert) {
-                                Alert(title: Text("About Covid-19 Map"),
-                                        message: Text("\nDeveloper: Emmanuel Tesauro\n\n Data provider: channelnewsasia.com\n\n Covid-19 Map has been developed for information purposes only."),
-                                        dismissButton: .default(Text("Close"))
-                                )
-                        })
+                                    .foregroundColor(.blue)
+                                    .onTapGesture {
+                                        self.isLoading = true
+                                        self.loadData()
+                                },
+                                                trailing:
+                                Button(action: {
+                                    //Apri alert
+                                    self.showingAlert.toggle()
+                                }) {
+                                    Image(systemName: "info.circle")
+                                        .font(.title)
+                                }
+                                .alert(isPresented: self.$showingAlert) {
+                                    Alert(title: Text("About Covid-19 Map"),
+                                          message: Text("\nDeveloper: Emmanuel Tesauro\n\n Data provider: channelnewsasia.com\n\n Covid-19 Map has been developed for information purposes only."),
+                                          dismissButton: .default(Text("Close"))
+                                    )
+                            })
                     }.onAppear {
                         if !self.loaded {
                             self.loadData()
@@ -100,7 +106,7 @@ struct ContentView: View {
             do{
                 //here dataResponse received from a network request
                 let jsonResponse = try JSONSerialization.jsonObject(with:
-                    data, options: [])
+                    data, options: .allowFragments)
                 
                 guard let response = jsonResponse as? Dictionary<String, Any> else {return}
                 
@@ -135,6 +141,12 @@ struct ContentView: View {
                             guard let confirmedDeath = dict.value(forKey: "gsx$reporteddeaths")! as? Dictionary<String, Any> else {return}
                             
                             self.nazioni.append(Nation(name: nation["$t"]! as! String, confirmedCases: confirmedCases["$t"]! as! String, confirmedDeath: confirmedDeath["$t"]! as! String, image: "\((nation["$t"]! as! String).lowercased().trimmingCharacters(in: .whitespaces).replacingOccurrences(of: " ", with: ""))"))
+                            
+                            guard let decimalValue = Int((confirmedCases["$t"] as! String).replacingOccurrences(of: ",", with: "")) else {
+                                print("error")
+                                return
+                            }
+                            self.totalCount += decimalValue
                         }
                     }
                     self.isLoading = false
