@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>733109168528-pbtq7p4j58spij1laiat1rkdcpevap81.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.733109168528-pbtq7p4j58spij1laiat1rkdcpevap81</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDzmk8uYiGRJEOPWETNT1v-HXeGQTyPcDM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>733109168528</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.emmanueltesauro.Covid-19-Map</string>
+	<key>PROJECT_ID</key>
+	<string>covid-19map-b1b2e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>covid-19map-b1b2e.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:733109168528:ios:c43f36d3a376ed3a36ab15</string>
+	<key>DATABASE_URL</key>
+	<string>https://covid-19map-b1b2e.firebaseio.com</string>
+</dict>
+</plist>

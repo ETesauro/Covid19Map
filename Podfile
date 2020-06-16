@@ -9,5 +9,6 @@ target 'Covid-19 Map' do
 
 pod 'Google-Mobile-Ads-SDK'
 pod 'CommonKeyboard'
+pod 'Firebase/Analytics'
 
 end
