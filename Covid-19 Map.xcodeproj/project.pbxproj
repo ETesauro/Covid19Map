@@ -3,13 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1B0ED117EAE5BA079CD76C82 /* Pods_Covid_19_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB928E43C7D53FFD333F2EC4 /* Pods_Covid_19_Map.framework */; };
 		2F03CAE4240E47F500BA9988 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03CAE3240E47F500BA9988 /* LoadingView.swift */; };
 		2F03CAE9240EC47700BA9988 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F03CAE8240EC47700BA9988 /* SearchBar.swift */; };
+		2F28117F2499549200CAF515 /* NationListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F28117E2499549200CAF515 /* NationListItem.swift */; };
+		2F7B973E249C105B00F13D9A /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7B973D249C105B00F13D9A /* LottieView.swift */; };
+		2F7B9741249C10AE00F13D9A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2F7B9740249C10AE00F13D9A /* Lottie */; };
+		2F7B9743249C10F700F13D9A /* LottieAnimations in Resources */ = {isa = PBXBuildFile; fileRef = 2F7B9742249C10F700F13D9A /* LottieAnimations */; };
 		2F800337243A5816004F1AD6 /* Detail.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 2F800336243A5815004F1AD6 /* Detail.PNG */; };
 		2F800339243A5826004F1AD6 /* CountryList.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 2F800338243A5825004F1AD6 /* CountryList.PNG */; };
 		2F99875524990B7100D19FF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F99875424990B7100D19FF7 /* GoogleService-Info.plist */; };
@@ -27,7 +31,10 @@
 /* Begin PBXFileReference section */
 		2F03CAE3240E47F500BA9988 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		2F03CAE8240EC47700BA9988 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		2F28117E2499549200CAF515 /* NationListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationListItem.swift; sourceTree = "<group>"; };
 		2F6720E41BF910FE02DFC4BA /* Pods-Covid-19 Map.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Covid-19 Map.release.xcconfig"; path = "Target Support Files/Pods-Covid-19 Map/Pods-Covid-19 Map.release.xcconfig"; sourceTree = "<group>"; };
+		2F7B973D249C105B00F13D9A /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		2F7B9742249C10F700F13D9A /* LottieAnimations */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LottieAnimations; sourceTree = "<group>"; };
 		2F800336243A5815004F1AD6 /* Detail.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Detail.PNG; sourceTree = "<group>"; };
 		2F800338243A5825004F1AD6 /* CountryList.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CountryList.PNG; sourceTree = "<group>"; };
 		2F99875424990B7100D19FF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -52,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B0ED117EAE5BA079CD76C82 /* Pods_Covid_19_Map.framework in Frameworks */,
+				2F7B9741249C10AE00F13D9A /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +106,7 @@
 				2FDF3F34240D58530060E2E2 /* Info.plist */,
 				2FDF3F27240D584D0060E2E2 /* Covid_19_Map.xcdatamodeld */,
 				2F99875424990B7100D19FF7 /* GoogleService-Info.plist */,
+				2F7B9742249C10F700F13D9A /* LottieAnimations */,
 				2FDF3F2E240D58530060E2E2 /* Preview Content */,
 			);
 			path = "Covid-19 Map";
@@ -125,7 +134,9 @@
 			children = (
 				2FDF3F2A240D584D0060E2E2 /* ContentView.swift */,
 				2FDF3F3E240D5C7B0060E2E2 /* NationDetailView.swift */,
+				2F28117E2499549200CAF515 /* NationListItem.swift */,
 				2F03CAE3240E47F500BA9988 /* LoadingView.swift */,
+				2F7B973D249C105B00F13D9A /* LottieView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,6 +176,9 @@
 			dependencies = (
 			);
 			name = "Covid-19 Map";
+			packageProductDependencies = (
+				2F7B9740249C10AE00F13D9A /* Lottie */,
+			);
 			productName = "Covid-19 Map";
 			productReference = 2FDF3F20240D584C0060E2E2 /* Covid-19 Map.app */;
 			productType = "com.apple.product-type.application";
@@ -193,6 +207,9 @@
 				Base,
 			);
 			mainGroup = 2FDF3F17240D584C0060E2E2;
+			packageReferences = (
+				2F7B973F249C10AE00F13D9A /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 2FDF3F21240D584C0060E2E2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -213,6 +230,7 @@
 				2FDF3F30240D58530060E2E2 /* Preview Assets.xcassets in Resources */,
 				2FDF3F2D240D58530060E2E2 /* Assets.xcassets in Resources */,
 				2F99875524990B7100D19FF7 /* GoogleService-Info.plist in Resources */,
+				2F7B9743249C10F700F13D9A /* LottieAnimations in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +289,8 @@
 				2FDF3F2B240D584D0060E2E2 /* ContentView.swift in Sources */,
 				2FDF3F3F240D5C7B0060E2E2 /* NationDetailView.swift in Sources */,
 				2F03CAE9240EC47700BA9988 /* SearchBar.swift in Sources */,
+				2F28117F2499549200CAF515 /* NationListItem.swift in Sources */,
+				2F7B973E249C105B00F13D9A /* LottieView.swift in Sources */,
 				2F03CAE4240E47F500BA9988 /* LoadingView.swift in Sources */,
 				2FDF3F29240D584D0060E2E2 /* Covid_19_Map.xcdatamodeld in Sources */,
 			);
@@ -468,6 +488,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2F7B973F249C10AE00F13D9A /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2F7B9740249C10AE00F13D9A /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F7B973F249C10AE00F13D9A /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		2FDF3F27240D584D0060E2E2 /* Covid_19_Map.xcdatamodeld */ = {

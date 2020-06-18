@@ -50,17 +50,18 @@ struct ContentView: View {
                         self.textSearched == "" ? true : $0.name.localizedCaseInsensitiveContains(self.textSearched)
                     }) { nazione in
                         NavigationLink(destination: NationDetailView(nation: nazione)) {
-                            HStack {
-                                Image(nazione.image)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 40, height: 40)
-                                VStack(alignment: .leading) {
-                                    Text(nazione.name)
-                                        .fontWeight(.bold)
-                                    Text("Confirmed cases: \(nazione.confirmedCases)")
-                                }
-                            }.padding(.init(top: 5, leading: 0, bottom: 5, trailing: 0))
+//                            HStack {
+//                                Image(nazione.image)
+//                                    .resizable()
+//                                    .aspectRatio(contentMode: .fit)
+//                                    .frame(width: 40, height: 40)
+//                                VStack(alignment: .leading) {
+//                                    Text(nazione.name)
+//                                        .fontWeight(.bold)
+//                                    Text("Confirmed cases: \(nazione.confirmedCases)")
+//                                }
+//                            }.padding(.init(top: 5, leading: 0, bottom: 5, trailing: 0))
+                            NationListItem(nation: nazione)
                         }.navigationBarTitle("Countries")
                             .navigationBarItems(leading:
                                 Image(systemName: "arrow.clockwise.circle")
@@ -77,6 +78,7 @@ struct ContentView: View {
                                 }) {
                                     Image(systemName: "info.circle")
                                         .font(.title)
+                                        .foregroundColor(Color.blue)
                                 }
                                 .alert(isPresented: self.$showingAlert) {
                                     Alert(title: Text("About Covid-19 Map"),

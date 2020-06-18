@@ -19,7 +19,9 @@ struct NationDetailView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 150, height: 150)
+            
             Spacer()
+            
             HStack{
                 Spacer()
                 Text("Country: ")
@@ -49,6 +51,7 @@ struct NationDetailView: View {
                     .font(.title)
                 Spacer()
             }
+            
             Spacer()
             Spacer()
         }

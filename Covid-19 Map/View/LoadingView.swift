@@ -23,11 +23,12 @@ struct LoadingView<Content>: View where Content: View {
                     .blur(radius: self.isShowing ? 3 : 0)
                 
                 VStack {
-                    Text("Loading...")
-                    ActivityIndicator(isAnimating: .constant(true), style: .large)
+                    Text("Loading...").padding(.top)
+//                    ActivityIndicator(isAnimating: .constant(true), style: .large)
+                    LottieView(filename: "covid19")
                 }
                 .frame(width: geometry.size.width / 2,
-                       height: geometry.size.height / 5)
+                       height: geometry.size.height / 3)
                     .background(Color.secondary.colorInvert())
                     .foregroundColor(Color.primary)
                     .cornerRadius(20)
