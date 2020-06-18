@@ -52,6 +52,9 @@ struct NationDetailView: View {
                 Spacer()
             }
             
+            LottieView(filename: "mask")
+                .frame(width: 200, height: 200)
+            
             Spacer()
             Spacer()
         }
